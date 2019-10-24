@@ -1,5 +1,6 @@
 package pl.coderslab.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,28 +10,28 @@ import pl.coderslab.dao.BookDAO;
 import pl.coderslab.model.Author;
 import pl.coderslab.model.Book;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
 public class BookController {
 
+    @Autowired
+    private final BookDAO bookDao;
+
+    @Autowired
+    public BookController(BookDAO bookDao){
+        this.bookDao = bookDao;
+    }
 
     @GetMapping("/getBook")
-    public String getBookWeb(Model model){
+    public String getBookWeb(){
 
        return "/WEB-INF/views/bookAddForm.jsp";
     }
 
     @PostMapping("/getBook")
     public String getBooks(@RequestParam String title, @RequestParam String firstName, @RequestParam String lastName,
-                           HttpServletRequest request){
-
-        BookDAO bookDao = (BookDAO) request.getAttribute("books");
-        if (bookDao==null) {
-            bookDao = new BookDAO();
-        }
+                           Model model){
 
         Author author = new Author();
         author.setFirstName(firstName);
@@ -41,7 +42,7 @@ public class BookController {
         bookDao.addBook(book);
         List<Book> books = bookDao.getBooks();
 
-        request.setAttribute("books", books);
+        model.addAttribute("books", books);
 
         return "/WEB-INF/views/bookAddForm.jsp";
     }

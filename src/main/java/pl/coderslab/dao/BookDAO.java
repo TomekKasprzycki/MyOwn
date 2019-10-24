@@ -10,8 +10,6 @@ public class BookDAO {
 
     private List<Book> books;
 
-    public BookDAO() {}
-
     public BookDAO(List<Book> books) {
         this.books = books;
     }

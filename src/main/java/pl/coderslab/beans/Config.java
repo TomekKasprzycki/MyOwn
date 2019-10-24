@@ -22,6 +22,6 @@ public class Config {
     @Bean
     Author getAuthor(){
 
-        return new Author("Jan", "Kowalski");
+        return new Author();
     }
 }
