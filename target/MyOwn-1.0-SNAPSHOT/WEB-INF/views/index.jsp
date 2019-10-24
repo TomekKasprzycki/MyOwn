@@ -18,5 +18,6 @@
 </div>
 <div><p>Strona stworzona na potrzeby kursu</p></div>
 
+<a href="/MyOwn/getBook">Tu jest link do testów dodawania książek</a>
 </body>
 </html>
