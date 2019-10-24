@@ -1,0 +1,12 @@
+ul {
+    color: brown;
+}
+
+th, .pierwszy {
+    background-color: gray;
+}
+
+td {
+    border-style: solid;
+    width: 50px;
+}
