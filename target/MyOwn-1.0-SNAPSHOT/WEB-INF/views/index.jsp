@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Strona startowa</title>
-    <link href="/WEB-INF/css/styles.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet">
 </head>
 <body>
 

@@ -4,32 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Dodawanie książek</title>
-    <link rel="stylesheet" href="WEB-INF/css/styles.css">
-   <style>
-        ul {
-            color: brown;
-        }
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
 
-        th, pierwszy {
-            background-color: gray;
-        }
-
-        td {
-            border: 1px solid black;
-        }
-
-        .titleAuthor {
-            width: 250px;
-        }
-
-        .LP {
-            width: 25px;
-        }
-
-        table {
-            border-collapse: collapse;
-        }
-    </style>
 </head>
 <body>
 <span class="dodawane"><h2>Dodawanie książki</h2></span>
@@ -67,6 +43,6 @@
     </table>
 
 </div>
-<script src="WEB-INF/js/alert.js"/>
+<script src="${pageContext.request.contextPath}/js/alert.js"/>
 </body>
 </html>
